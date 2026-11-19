@@ -1,0 +1,82 @@
+{
+  "projeto": "Citizen Assist AI - Economia no ar-condicionado residencial",
+  "disciplina": "Soluções em Energias Renováveis e Sustentáveis (1CC)",
+  "publico_alvo": "Moradores de residências (casa própria, com telhado) que usam ar-condicionado split e querem reduzir a conta de luz sem perder conforto",
+  "periodo_referencia_dias": 30,
+  "legenda_tipos": {
+    "fonte": "valor retirado de fonte pública citada em docs/referencias.md",
+    "derivado": "calculado pela equipe a partir de valores de fonte (conta mostrada em docs/analise.md)",
+    "premissa": "ESTIMATIVA da equipe, sem fonte oficial; deve ser substituída por dado real do usuário"
+  },
+  "parametros": {
+    "potencia_media_w": {
+      "valor": 700, "unidade": "W", "tipo": "premissa",
+      "origem": "Potência elétrica média em operação de um split ~12.000 BTU/h (compressor liga e desliga). Medir com wattímetro ou ver etiqueta ENCE/PBE do aparelho."
+    },
+    "horas_por_dia": {
+      "valor": 6, "unidade": "h/dia", "tipo": "premissa",
+      "origem": "Uso noturno/diurno típico de 6 h por dia; o usuário informa o seu."
+    },
+    "dias_mes": {
+      "valor": 30, "unidade": "dias", "tipo": "premissa",
+      "origem": "Período de referência comum a todas as alternativas (30 dias)."
+    },
+    "tarifa_kwh": {
+      "valor": 1.10, "unidade": "R$/kWh", "tipo": "derivado",
+      "origem": "ANEEL, Luz na Tarifa: tarifa média residencial B1 2026 = R$ 849/MWh sem tributos. Com ICMS 18% e PIS/Cofins 4,9% 'por dentro': 0,849 / (1 - 0,18 - 0,049) = R$ 1,10/kWh. Alíquotas variam por estado: use a tarifa da sua conta.",
+      "url": "https://cenarioenergia.com.br/wp-content/uploads/2026/03/17032026_infoTARIFA_MAR_2026.pdf"
+    },
+    "reducao_eficiencia_pct": {
+      "valor": 15, "unidade": "%", "tipo": "premissa",
+      "origem": "Redução de consumo com ajuste de uso (setpoint ~23 °C, filtros limpos, portas/janelas fechadas, timer). NÃO há fonte oficial para este percentual: é hipótese da equipe, testada com 10% e 25% na análise de sensibilidade."
+    },
+    "custo_ajuste_eficiencia_brl": {
+      "valor": 0, "unidade": "R$", "tipo": "premissa",
+      "origem": "Mudança de hábito e limpeza de filtros feita pelo próprio morador, sem investimento."
+    },
+    "hsp_kwh_m2_dia": {
+      "valor": 4.589, "unidade": "kWh/m².dia", "tipo": "fonte",
+      "origem": "Irradiação global horizontal média anual do município de São Paulo - Atlas Brasileiro de Energia Solar (INPE), reproduzido pela ABSOLAR. Troque pelo valor da sua cidade (CRESESB SunData).",
+      "url": "https://www.absolar.org.br/wp-content/uploads/2021/02/São Paulo.pdf"
+    },
+    "desempenho_pr": {
+      "valor": 0.75, "unidade": "adimensional", "tipo": "premissa",
+      "origem": "Taxa de desempenho (perdas de inversor, temperatura, sujeira, cabos). Faixa típica adotada em projetos residenciais: 0,70 a 0,80."
+    },
+    "custo_wp_brl": {
+      "valor": 2.45, "unidade": "R$/Wp", "tipo": "fonte",
+      "origem": "Custo médio nacional de sistemas fotovoltaicos residenciais, Radar Solfácil, 1º tri 2026.",
+      "url": "https://cenarioenergia.com.br/2026/06/09/preco-do-watt-pico-residencial-recua-7-em-um-ano-e-abre-janela-de-oportunidade-na-mmgd/"
+    },
+    "acrescimo_pequeno_porte_pct": {
+      "valor": 30, "unidade": "%", "tipo": "premissa",
+      "origem": "A fonte não separa sistemas pequenos (<2 kWp), que costumam custar mais por Wp (inversor e instalação têm custo fixo). Acréscimo estimado pela equipe; testado de 0% a 60% na sensibilidade."
+    },
+    "perda_fio_b_pct": {
+      "valor": 12, "unidade": "% da economia", "tipo": "derivado",
+      "origem": "Lei 14.300/2022, art. 27: em 2026 incide 60% da componente Fio B sobre a energia compensada (sistemas protocolados após jan/2023). Assumindo que o Fio B representa ~20% da tarifa (estimativa da equipe), a perda é 60% x 20% = 12%.",
+      "url": "https://www.gov.br/mme/pt-br/acesso-a-informacao/legislacao/leis/lei-n-14-300-2022.pdf"
+    },
+    "fator_co2_kg_kwh": {
+      "valor": 0.0289, "unidade": "kg CO2/kWh", "tipo": "fonte",
+      "origem": "MCTI/SIRENE: fator médio do SIN em abril/2025 = 28,9 kg CO2/MWh (jan a abr/2025: 21,5 a 28,9). É valor MENSAL; confira a média anual no site do MCTI.",
+      "url": "https://canalsolar.com.br/emissoes-de-co%e2%82%82-geracao-eletrica-mcti/"
+    },
+    "horizonte_anos": {
+      "valor": 10, "unidade": "anos", "tipo": "premissa",
+      "origem": "Horizonte para comparar o saldo financeiro acumulado das alternativas (sem reajuste de tarifa e sem degradação dos painéis)."
+    }
+  },
+  "limites_decisao": {
+    "payback_solar_atrativo_meses": 60,
+    "payback_solar_inviavel_meses": 120
+  },
+  "limitacoes": [
+    "Todos os valores são ESTIMATIVAS e não garantem economia, geração ou retorno financeiro.",
+    "O consumo real depende do aparelho, da temperatura externa, do isolamento do ambiente, de portas/janelas e do hábito de uso.",
+    "A geração solar depende da irradiação local, sombreamento, orientação e inclinação do telhado, e de orçamento real de instalador.",
+    "A análise supõe casa própria com telhado adequado e consumo total da residência acima do mínimo faturável; quem mora de aluguel ou em apartamento pode não conseguir instalar.",
+    "Tarifa sem reajuste, sem degradação dos painéis, sem juros e sem manutenção: o payback é simples.",
+    "O fator de emissão do SIN é baixo (matriz majoritariamente renovável), então o ganho em CO2 é pequeno em kg; emissões do ciclo de vida dos painéis não foram consideradas."
+  ]
+}

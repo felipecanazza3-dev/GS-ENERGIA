@@ -1,0 +1,60 @@
+{
+  "orientacoes": [
+    {
+      "id": "EN-01",
+      "titulo": "Quanto meu ar-condicionado gasta?",
+      "palavras_chave": ["quanto", "gasta", "consumo", "consome", "conta", "luz", "gasto", "calcular", "ar", "condicionado", "arcondicionado"],
+      "texto": "Consumo (kWh) = potência média (kW) x horas por dia x dias. Com 700 W, 6 h/dia e 30 dias dá 126 kWh/mês; multiplicado pela tarifa da sua conta (R$/kWh) você obtém o gasto. Para um número real, meça com um wattímetro ou use a potência da etiqueta do aparelho.",
+      "usa_simulacao": true
+    },
+    {
+      "id": "EN-02",
+      "titulo": "O que é kWh?",
+      "palavras_chave": ["kwh", "quilowatt", "unidade", "significa", "watt", "energia", "potencia"],
+      "texto": "kWh é a energia consumida por um aparelho de 1.000 W ligado por 1 hora. É a unidade cobrada na conta de luz. Potência (kW) diz o quão 'forte' é o aparelho; energia (kWh) é potência x tempo de uso.",
+      "usa_simulacao": false
+    },
+    {
+      "id": "EN-03",
+      "titulo": "Como economizar sem investir (eficiência e hábitos)",
+      "palavras_chave": ["economizar", "economia", "reduzir", "diminuir", "baixar", "habito", "filtro", "temperatura", "graus", "portas", "janelas", "timer", "eficiencia", "ajustar", "ajuste", "uso"],
+      "texto": "Mantenha portas e janelas fechadas, limpe os filtros, use temperatura em torno de 23 °C (valor citado como ideal pela Anvisa em reportagem do Canaltech), use o timer para desligar de madrugada e deixe a unidade interna em local alto e desobstruído. Não existe percentual oficial garantido: neste projeto usamos 15% como hipótese e testamos 10% e 25%.",
+      "usa_simulacao": true
+    },
+    {
+      "id": "EN-04",
+      "titulo": "Vale a pena energia solar para o ar-condicionado?",
+      "palavras_chave": ["solar", "fotovoltaica", "fotovoltaico", "placas", "paineis", "painel", "renovavel", "vale", "pena", "investir", "investimento", "retorno", "payback", "compensa"],
+      "texto": "A energia solar troca consumo da rede por geração própria no telhado. O custo inicial é alto e o retorno leva anos; por isso a simulação calcula o tamanho do sistema, o custo estimado e o payback com os seus dados. Só vale avaliar se você é dono do imóvel e tem telhado sem sombra.",
+      "usa_simulacao": true
+    },
+    {
+      "id": "EN-05",
+      "titulo": "Regras da energia solar (Lei 14.300, Fio B)",
+      "palavras_chave": ["lei", "14.300", "fio", "regra", "regras", "aneel", "compensacao", "creditos", "credito", "distribuidora", "injetar", "rede"],
+      "texto": "A Lei 14.300/2022 permite compensar na conta a energia que seu sistema injeta na rede. Para sistemas novos, uma parte da tarifa (Fio B) passa a ser cobrada de forma gradual: 60% em 2026, 75% em 2027 e 90% em 2028. Por isso a economia é um pouco menor que a tarifa cheia; nossa simulação desconta isso.",
+      "usa_simulacao": false
+    },
+    {
+      "id": "EN-06",
+      "titulo": "Impacto ambiental e CO₂",
+      "palavras_chave": ["co2", "carbono", "emissao", "emissoes", "ambiente", "ambiental", "sustentavel", "sustentabilidade", "meio", "poluicao"],
+      "texto": "No Brasil a rede elétrica é majoritariamente renovável: o fator do SIN foi de ~29 g CO₂/kWh em abril de 2025 (MCTI). Por isso economizar energia evita poucos kg de CO₂ por mês, mas reduz também custos e a pressão sobre o sistema. Emissões da fabricação dos painéis não foram contabilizadas.",
+      "usa_simulacao": true
+    },
+    {
+      "id": "EN-07",
+      "titulo": "Tarifa e bandeiras tarifárias",
+      "palavras_chave": ["tarifa", "bandeira", "bandeiras", "reajuste", "aumento", "preco", "caro", "vermelha", "amarela", "verde"],
+      "texto": "A tarifa muda por distribuidora, impostos (ICMS) e bandeira. Em novembro de 2026 a bandeira está verde (sem cobrança extra), segundo a ANEEL. Nossa simulação usa R$ 1,10/kWh como valor derivado da tarifa média residencial; troque pelo valor da sua conta.",
+      "usa_simulacao": false
+    },
+    {
+      "id": "EN-08",
+      "titulo": "Posso confiar nessas estimativas?",
+      "palavras_chave": ["confiar", "garantia", "garante", "certeza", "precisao", "preciso", "limitacao", "limitacoes", "erro", "estimativa", "estimativas"],
+      "texto": "São estimativas, não garantias. Parâmetros marcados como 'premissa' (potência, horas, % de economia, desempenho do sistema, acréscimo de pequeno porte) são hipóteses da equipe e devem ser trocados pelos seus dados. Peça sempre orçamento de instalador antes de investir.",
+      "usa_simulacao": false
+    }
+  ]
+}
